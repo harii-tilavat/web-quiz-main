@@ -1,0 +1,17 @@
+.auth-section {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  bottom: 0;
+  .auth-card {
+    box-shadow: 0 0 10px rgba($color: #111, $alpha: 0.2);
+  }
+  label {
+    font-weight: 400;
+  }
+  .form-control {
+    background-color: transparent;
+  }
+}

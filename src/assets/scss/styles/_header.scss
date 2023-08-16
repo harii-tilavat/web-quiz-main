@@ -1,0 +1,81 @@
+.header {
+  height: $max-header-height;
+  background-color: $secondary;
+  transition: all 0.3s;
+  z-index: 100;
+  position: fixed;
+  background: #fff;
+  padding: 0 20px;
+  .top-navbar {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    .nav-item {
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      color: $primary;
+      position: relative;
+      .dot {
+        background-color: $primary;
+        height: 3px;
+        width: 3px;
+        position: absolute;
+        top: 40px;
+        border-radius: 50%;
+      }
+      .badge {
+        position: absolute;
+        background-color: #ff8084;
+        height: 15px;
+        text-align: center;
+        width: 15px;
+        font-size: 10px;
+        top: 7px;
+        left: 17px;
+      }
+      .search {
+        background-color: #f8f8f8;
+        padding: 5px 10px;
+        border-radius: 50px;
+        .search-icon {
+          color: #8e8e8e;
+          padding: 0 15px;
+          border-right: 1px solid #e8ebf2;
+        }
+        .search-input {
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+        }
+      }
+      .profile-img {
+        height: $icon-size;
+        width: $icon-size;
+        img {
+          border-radius: 50%;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  .bar-btn {
+    @extend %icons;
+    span{
+      cursor: pointer;
+    }
+  }
+  .pull-me {
+    @extend %icons;
+    margin-right: 10px;
+  }
+  // width: calc(100% - 250px);
+}
+@media only screen and (max-width: 991px) {
+  .header {
+    height: $min-header-height;
+    width: 100%;
+  }
+}

@@ -1,0 +1,78 @@
+.sidebar {
+  width: $partation;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  z-index: 10;
+  .sidebar-section {
+    height: 100vh;
+    overflow-y: scroll;
+    .sidebar-body{
+      margin-top: $max-header-height;
+    }
+  }
+  .sidebar-profile {
+    text-align: center;
+    padding: 25px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .profile-img {
+      width: 30%;
+      margin: 0 auto;
+      img {
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+    .profile-info {
+      margin-top: 5px;
+      .profile-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: $primary;
+      }
+      .profile-des {
+        font-size: 11px;
+        font-weight: 500;
+      }
+    }
+  }
+  .menu-list {
+    .main-menu {
+      list-style: none;
+      color: #313131;
+      font-size: 15px;
+      .main-menu-label{
+        margin-left: 1.5rem;
+        font-weight: 500;
+      }
+      .menu-item {
+        ul {
+          list-style: disc;
+          color: #898989;
+        }
+      }
+      .menu-link  {
+        margin-bottom: 20px;
+        transition: 0.2s;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        &:hover{
+          color: $primary;
+          transform: translateX(5px);
+        }
+        .ceret-icon {
+          position: absolute;
+          right: 0;
+        }
+      }
+      .menu-link.active{
+        // color: #313131;
+        color: $primary;
+      }
+    }
+  }
+}

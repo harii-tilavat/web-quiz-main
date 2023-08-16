@@ -1,0 +1,158 @@
+
+// --------------Card--------------------//
+.my-card {
+  box-shadow: 0 5px 24px 0 rgba(68, 102, 242, 0.05);
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  height: calc(100% - 30px);
+  .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+  .card-body {
+    padding: 30px;
+  }
+}
+.btn-main {
+  background-color: $primary;
+  color: white;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px 15px;
+  transition: 0.2s;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+    background-color: $primary;
+    color: white;
+  }
+}
+// -----------------------Table----------------------------------//
+.table {
+  td {
+    padding: 1rem !important;
+  }
+}
+.app-button {
+  margin: 10px 0;
+}
+// Sidebar
+
+.sidebar {
+  transform: translateX(-250px);
+  transition: 0.3s;
+  overflow: auto;
+}
+.sidebar.sidebar-open {
+  transform: translateX(0);
+  transition: 0.3s;
+}
+// ---------Main-panel-----------
+.main-panel {
+  .header {
+    width: 100%;
+  }
+}
+.main-panel.main-panel-open {
+  transition: 0.3s;
+  margin-left: $partation;
+  .header {
+    width: calc(100% - $partation);
+  }
+}
+// ------------Logo---------------
+.logo-section {
+  transition: all 0.3s;
+  background-color: #fff;
+  height: $max-header-height;
+  .logo {
+    font-weight: bold;
+    font-size: 2rem;
+    transition: 0.3s;
+    i {
+      color: $primary;
+      margin-right: 10px;
+    }
+  }
+}
+
+// -----------Header--------------
+
+.header-down {
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #fff;
+}
+.header-down.open {
+  opacity: 1;
+  transition: 0.3s;
+}
+// -----------Page Body--------------
+// ------------ERROR---------
+.error-message {
+  position: relative;
+  color: red;
+  font-size: 13px;
+  .error {
+    position: absolute;
+    right: 0;
+  }
+}
+// ------------Pagination----------
+.app-pagination {
+  .pagination {
+    .page-link {
+      color: $primary;
+    }
+  }
+}
+// -----------------------Media Queries-------------------//
+@media only screen and (max-width: 991px) {
+  .main-panel.main-panel-open {
+    .header {
+      width: 100%;
+    }
+  }
+  .sidebar {
+    transition: 0.3s;
+    transform: translateX(0);
+  }
+  .sidebar.sidebar-open {
+    transform: translateX(-250px);
+    transition: 0.3s;
+  }
+  .main-panel.main-panel-open {
+    transition: 0.3s;
+    margin-left: 0;
+  }
+
+  .logo-section {
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+  // ----------Header---------
+  .header-down {
+    opacity: 0;
+    transition: 0.3s;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .logo-section {
+    .logo {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+}

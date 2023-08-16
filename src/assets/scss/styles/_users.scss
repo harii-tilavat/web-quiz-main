@@ -1,0 +1,38 @@
+.product-list {
+  .crud-btns {
+    display: flex;
+    // justify-content: space-around;
+    font-size: 20px;
+    span {
+      cursor: pointer;
+    }
+    .edit-btn {
+      color: #22af47;
+    }
+    .delete-btn {
+      color: $primary-1;
+    }
+  }
+}
+.create-user {
+  .navigation {
+    .nav-link {
+      color: black;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+    }
+    .nav-link.active,
+    .nav-link:hover {
+      color: $primary;
+      border-bottom: 2px solid $primary;
+    }
+  }
+  .account-details {
+    padding: 20px 0;
+    .row {
+      align-items: center;
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<div class="auth-section" >
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xxl-6 col-xl-8 col-lg-8 col-md-12 col-sm-12">
+        <div class="auth-card my-card">
+          <div class="card-header pb-2">
+           <p> <span class="card-title">Login Here</span></p>
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi ea vitae necessitatibus et distinctio. Similique dolores est illo sit tempora?</p>
+          </div>
+          <div class="card-body">
+            <div class="auth-form">
+              <form action="" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-4">
+                  <label for="">Username</label>
+                  <input type="text" class="form-control" formControlName="username">
+                  <div class="error-message" *ngIf="authForm.controls['username'].touched || submitted">
+                    <span class="error" *ngIf="authForm.controls['username'].errors?.['required']">Username
+                      Required!
+                    </span>
+                  </div>
+                </div>
+                <div class="form-group mb-4">
+                  <label for="">Password</label>
+                  <input type="password" class="form-control" formControlName="password">
+                  <div class="error-message" *ngIf="authForm.controls['password'].touched || submitted">
+                    <span class="error" *ngIf="authForm.controls['password'].errors?.['required']">Password
+                      Required!
+                    </span>
+                  </div>
+                </div>
+                <div class="form-group mb-4 d-flex-between">
+                  <div class="remember-me">
+                    <label for="">Remeber Me</label>
+                    <input type="checkbox" class="form-check-input ms-2">
+                  </div>
+                  <div class="forgot-pass">
+                    <a class="text-decoration-underline">Forgot Password</a>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="app-button m-0">
+                    <button type="submit" class="btn-main">Login</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
