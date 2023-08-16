@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ProductModel } from 'src/app/_model';
 @Injectable({ providedIn: 'root' })
 export class ProductListService {
-  public startedEditing = new Subject<number>();
+  public startedEditing = new Subject<number | null>();
   public productChange = new Subject<ProductModel[]>();
   public productlist: ProductModel[] = [
     {
@@ -15,7 +15,7 @@ export class ProductListService {
       productImage: '/assets/images/p1.svg'
     }
   ];
-  // public usersList: UsersModel[] = [
+
   //   {
   //     id: 123,
   //     avtarUrl: "avatar1.jpg",
@@ -113,8 +113,14 @@ export class ProductListService {
     this.productChange.next(this.productlist.slice());
     return this.productlist.slice();
   }
+  getProduct(id: number): ProductModel {
+    return this.productlist.find(i => i.productId === id)!;
+  }
   addProduct(product: ProductModel): void {
-    let maxId = Math.max(...this.productlist.map(i => i.productId));
+    let maxId = 0;
+    if(this.productlist.length!==0){
+      maxId = Math.max(...this.productlist.map(i => i.productId));
+    }
     maxId++;
     this.productlist.push({ ...product, productId: maxId });
     this.productChange.next(this.productlist.slice());
@@ -126,11 +132,15 @@ export class ProductListService {
     let updatedProduct = this.productlist.map((product) => {
       if (product.productId === id) {
         return { ...product, ...newProduct }
-      } else{
+      } else {
         return product;
       }
     });
     this.productChange.next(updatedProduct);
+  }
+  deleteProduct(id: number) {
+    this.productlist = this.productlist.filter(i => i.productId !== id);
+    this.productChange.next(this.productlist.slice());
   }
 }
 // Access to XMLHttpRequest at 'http://localhost:7268/User/CreateUser' from origin 'http://localhost:4200' has been blocked by CORS policy: Request header field content-type is not allowed by Access-Control-Allow-Headers in preflight response.

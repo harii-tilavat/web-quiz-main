@@ -16,7 +16,7 @@ export class AddProductComponent implements OnInit {
   public editMode: boolean = false;
   public editedProductId!: number;
   public editedItem!: ProductModel;
-  constructor(private productListService: ProductListService, private snakeBar: MatSnackBar) { }
+  constructor(private productListService : ProductListService, private snakeBar: MatSnackBar) { }
   ngOnInit(): void {
     this.initForm();
     this.productListService.startedEditing.subscribe({
@@ -29,6 +29,7 @@ export class AddProductComponent implements OnInit {
           return;
         }
         this.editMode=false;
+        this.initForm();
       }
     })
   }
