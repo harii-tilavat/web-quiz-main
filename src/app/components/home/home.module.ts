@@ -12,8 +12,6 @@ import { AddProductComponent } from 'src/app/components/home/product-list/add-pr
 import { TeamsComponent } from './teams/teams.component';
 import { AddTeamsComponent } from './teams/add-teams/add-teams.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddTestimonyComponent } from './add-testimony/add-testimony.component';
-import { TestimonyComponent } from './testimony/testimony.component';
 
 const routes: Routes = [
   {
@@ -36,8 +34,6 @@ const routes: Routes = [
     AddProductComponent,
     TeamsComponent,
     AddTeamsComponent,
-    AddTestimonyComponent,
-    TestimonyComponent
   ],
   imports: [
     CommonModule,
