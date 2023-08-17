@@ -1,1 +1,56 @@
-<p>add-testimony works!</p>
+<div class="modal fade" id="add-testimonial" tabindex="-1" aria-labelledby="add-testimonial-label" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="add-testimonial-label">Manage Testimonial Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onClose()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="testimonyForm">
+          <div class="mb-3">
+            <label for="title" class="col-form-label">Enter Title:</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+            <div class="error-message" *ngIf="testimonyForm.controls['title'].touched || submitted">
+              <span class="error" *ngIf="testimonyForm.controls['title'].errors?.['required']">
+                Title Required!
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="sub-title" class="col-form-label">Enter Product Sub title:</label>
+            <input type="text" class="form-control" id="sub-title" formControlName="subTitle">
+            <div class="error-message" *ngIf="testimonyForm.controls['subTitle'].touched || submitted">
+              <span class="error" *ngIf="testimonyForm.controls['subTitle'].errors?.['required']">
+                Sub Title Required!
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="product-image" class="col-form-label">Enter Image:</label>
+            <input type="text" class="form-control" id="product-image" formControlName="image">
+            <div class="error-message" *ngIf="testimonyForm.controls['image'].touched || submitted">
+              <span class="error" *ngIf="testimonyForm.controls['image'].errors?.['required']">
+                Image required
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="col-form-label">Enter Description:</label>
+            <textarea class="form-control" id="description" formControlName="desc"></textarea>
+            <div class="error-message" *ngIf="testimonyForm.controls['desc'].touched || submitted">
+              <span class="error" *ngIf="testimonyForm.controls['desc'].errors?.['required']">
+                Description Required
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="app-button">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Close</button>
+          <button type="button" class="btn btn-main ms-2" (click)="onSave()" [attr.data-bs-dismiss]="testimonyForm.valid?'modal':'else'">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

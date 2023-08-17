@@ -23,8 +23,12 @@
       <ul class="main-menu list-unstyled">
         <li *ngFor="let item of menuList;let i=index" class="menu-item">
           <a class="menu-link" (click)="onRoute(item.label)" [routerLink]="item.routing" [routerLinkActive]="'active'">
-            <span class="sidebar-icon"><fa-icon [icon]="item.icon"></fa-icon></span>
-            <span class="main-menu-label " [ngClass]="{'fw-bold':item.label==='Logout'}">{{item.label}}</span>
+            <div>
+              <span class="sidebar-icon"><fa-icon [icon]="item.icon"></fa-icon></span>
+            </div>
+            <div>
+              <span class="main-menu-label " [ngClass]="{'fw-bold':item.label==='Logout'}">{{item.label}}</span>
+            </div>
           </a>
         </li>
       </ul>

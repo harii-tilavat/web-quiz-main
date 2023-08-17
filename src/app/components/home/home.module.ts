@@ -11,7 +11,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddProductComponent } from 'src/app/components/home/product-list/add-product/add-product.component';
 import { TeamsComponent } from './teams/teams.component';
 import { AddTeamsComponent } from './teams/add-teams/add-teams.component';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TestimonyComponent } from './testimony/testimony.component';
+import { AddTestimonyComponent } from './testimony/add-testimony/add-testimony.component';
 
 const routes: Routes = [
   {
@@ -20,7 +22,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product-list', component: ProductListComponent },
-      { path: 'teams-and-shapes', component: TeamsComponent },
+      { path: 'teams-of-shapes', component: TeamsComponent },
+      { path: 'testimonial', component: TestimonyComponent },
       { path: '**', redirectTo:'dashboard', pathMatch:'full'}
     ]
   }
@@ -34,6 +37,8 @@ const routes: Routes = [
     AddProductComponent,
     TeamsComponent,
     AddTeamsComponent,
+    TestimonyComponent,
+    AddTestimonyComponent
   ],
   imports: [
     CommonModule,

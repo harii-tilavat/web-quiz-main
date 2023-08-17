@@ -1,9 +1,10 @@
-<div class="modal fade" id="add-product" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="add-product" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-bs-backdrop="static" data-bs-keyboard="false">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Manage Product List</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onClose()"></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="productForm">
@@ -48,7 +49,8 @@
       <div class="modal-footer">
         <div class="app-button">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Close</button>
-          <button type="button" class="btn btn-main ms-2" (click)="onSave()" [attr.data-bs-dismiss]="productForm.valid?'modal':'else'">Save</button>
+          <button type="button" class="btn btn-main ms-2" (click)="onSave()"
+            [attr.data-bs-dismiss]="productForm.valid?'modal':'else'">Save</button>
         </div>
       </div>
     </div>

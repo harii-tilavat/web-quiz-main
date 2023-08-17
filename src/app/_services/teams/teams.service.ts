@@ -7,12 +7,12 @@ export class TeamsService {
   public teamChange = new Subject<TeamsModel[]>();
   public startEdit = new Subject<number | null>();
   public teamsList: TeamsModel[] = [
-    {
-      id: 1,
-      title: 'hello',
-      desc: 'Hello Word',
-      image: '/assets/images/p1.svg'
-    }
+    // {
+    //   id: 1,
+    //   title: 'team member',
+    //   desc: 'Team Memeber Details',
+    //   image: '/assets/images/p1.svg'
+    // }
   ];
   constructor() { }
   getTeams(): TeamsModel[] {
