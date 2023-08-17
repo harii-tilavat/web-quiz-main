@@ -125,10 +125,10 @@
   }
   .sidebar {
     transition: 0.3s;
-    transform: translateX(0);
+    // transform: translateX(0);
   }
   .sidebar.sidebar-open {
-    transform: translateX(-250px);
+    // transform: translateX(-250px);
     transition: 0.3s;
   }
   .main-panel.main-panel-open {

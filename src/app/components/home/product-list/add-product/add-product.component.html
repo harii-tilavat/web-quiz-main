@@ -8,7 +8,7 @@
       <div class="modal-body">
         <form [formGroup]="productForm">
           <div class="mb-3">
-            <label for="title" class="col-form-label">Enter Title:</label>
+            <label for="title" class="col-form-label">Enter Product Title:</label>
             <input type="text" class="form-control" id="title" formControlName="productTitle">
             <div class="error-message" *ngIf="productForm.controls['productTitle'].touched || submitted">
               <span class="error" *ngIf="productForm.controls['productTitle'].errors?.['required']">
@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="sub-title" class="col-form-label">Enter Sub title:</label>
+            <label for="sub-title" class="col-form-label">Enter Product Sub title:</label>
             <input type="text" class="form-control" id="sub-title" formControlName="productSubTitle">
             <div class="error-message" *ngIf="productForm.controls['productSubTitle'].touched || submitted">
               <span class="error" *ngIf="productForm.controls['productSubTitle'].errors?.['required']">
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="product-image" class="col-form-label">Enter Image:</label>
+            <label for="product-image" class="col-form-label">Enter product Image:</label>
             <input type="text" class="form-control" id="product-image" formControlName="productImage">
             <div class="error-message" *ngIf="productForm.controls['productImage'].touched || submitted">
               <span class="error" *ngIf="productForm.controls['productImage'].errors?.['required']">
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="description" class="col-form-label">Enter Description:</label>
+            <label for="description" class="col-form-label">Enter Product Description:</label>
             <textarea class="form-control" id="description" formControlName="productDesc"></textarea>
             <div class="error-message" *ngIf="productForm.controls['productDesc'].touched || submitted">
               <span class="error" *ngIf="productForm.controls['productDesc'].errors?.['required']">

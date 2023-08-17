@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { UserModel } from 'src/app/_model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  public isAdmin = new Subject<boolean>();
-  public user = new Subject<UserModel>();
+  public user = new BehaviorSubject<UserModel | null>(null);
   public loginData = [
     { username: 'admin', password: 'admin123' },
     { username: 'harit', password: '111111' },
@@ -13,11 +12,14 @@ export class AuthService {
   constructor() { }
   authentication(authData: UserModel): any {
     const user = this.loginData.find(i => i.username === authData.username && i.password === authData.password)!;
-    this.user.next(user);
     if (user) {
+      this.user.next(user);
+      localStorage.setItem('admin',JSON.stringify(user));
       return true;
     } else {
+      this.user.next(null);
       return false;
     }
   }
+
 }

@@ -6,7 +6,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AddProductComponent } from './add-product/add-product.component';
+import { AddProductComponent } from '../components/home/product-list/add-product/add-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -15,8 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [
     SidebarComponent,
     BreadcrumbComponent,
-    FooterComponent,
-    AddProductComponent
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -29,8 +28,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   exports: [
     SidebarComponent,
     BreadcrumbComponent,
-    FooterComponent,
-    AddProductComponent
+    FooterComponent
   ]
 })
 export class SharedModule { }

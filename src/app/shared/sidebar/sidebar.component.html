@@ -1,5 +1,5 @@
 <div class="sidebar-section">
-  <div class="logo-section d-flex-center d-lg-flex d-none border-bottom border-end fixed-top">
+  <div class="logo-section d-flex-center d-lg-flex border-bottom border-end fixed-top">
     <div class="logo d-flex-center">
       <i class="fa-solid fa-font-awesome"></i>
       <span>Nugget</span>
@@ -22,33 +22,10 @@
     <div class="menu-list p-4 ">
       <ul class="main-menu list-unstyled">
         <li *ngFor="let item of menuList;let i=index" class="menu-item">
-          <a class="menu-link " (click)="onMenuToggle(i)" [routerLink]="item.routing" [routerLinkActive]="'active'">
-            <span><fa-icon [icon]="item.icon"></fa-icon></span>
-            <span class="main-menu-label ">{{item.label}}</span>
-            <span class="ceret-icon" *ngIf="item.subMenu">
-              <i class=" fa fa-angle-right " [ngClass]="{'fa-rotate-90':isMenuOpen[i]}"></i>
-              <!-- <fa-icon [icon]="item.icon"></fa-icon> -->
-            </span>
+          <a class="menu-link" (click)="onRoute(item.label)" [routerLink]="item.routing" [routerLinkActive]="'active'">
+            <span class="sidebar-icon"><fa-icon [icon]="item.icon"></fa-icon></span>
+            <span class="main-menu-label " [ngClass]="{'fw-bold':item.label==='Logout'}">{{item.label}}</span>
           </a>
-          <ul class="sub-menu collapse" [ngClass]="{'show':isMenuOpen[i]}" *ngIf="item.subMenu">
-            <li *ngFor="let subItem of item.subMenu;let i=index" class="menu-item">
-              <a class="menu-link" (click)="onSubMenuToggle(i)" [routerLink]="subItem.routing"
-                [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:false}">
-                <span class="menu-label">{{subItem.label}}</span>
-                <span class="ceret-icon " *ngIf="subItem.subMenu">
-                  <i class="fa fa-angle-right " [ngClass]="{'fa-rotate-90':isSubMenuOpen[i]}"></i>
-                </span>
-              </a>
-              <ul class="sub-menu collapse" [type]="'circle'" [ngClass]="{'show': isSubMenuOpen[i]}"
-                *ngIf="subItem.subMenu">
-                <li *ngFor="let subItem2 of subItem.subMenu;" class="menu-item">
-                  <a class="menu-link">
-                    <span class="menu-label">{{subItem2.label}}</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </li>
       </ul>
     </div>

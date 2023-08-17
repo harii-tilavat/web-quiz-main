@@ -8,7 +8,12 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AddProductComponent } from 'src/app/shared/add-product/add-product.component';
+import { AddProductComponent } from 'src/app/components/home/product-list/add-product/add-product.component';
+import { TeamsComponent } from './teams/teams.component';
+import { AddTeamsComponent } from './teams/add-teams/add-teams.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddTestimonyComponent } from './add-testimony/add-testimony.component';
+import { TestimonyComponent } from './testimony/testimony.component';
 
 const routes: Routes = [
   {
@@ -17,6 +22,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product-list', component: ProductListComponent },
+      { path: 'teams-and-shapes', component: TeamsComponent },
+      { path: '**', redirectTo:'dashboard', pathMatch:'full'}
     ]
   }
 ]
@@ -25,12 +32,18 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     DashboardComponent,
-    ProductListComponent
+    ProductListComponent,
+    AddProductComponent,
+    TeamsComponent,
+    AddTeamsComponent,
+    AddTestimonyComponent,
+    TestimonyComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     RouterModule.forChild(routes)
   ]

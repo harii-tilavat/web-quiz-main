@@ -36,7 +36,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.productListService.startedEditing.next(null);
   }
   onEditProduct(id:number):void{
-    // this.productListService.updateProduct(id);
     this.productListService.startEdit(id);
   }
   onDeleteProduct(id:number):void{

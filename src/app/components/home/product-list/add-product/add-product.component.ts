@@ -53,7 +53,7 @@ export class AddProductComponent implements OnInit {
     this.success = false;
     this.editMode = false;
   }
-  public initForm(): void {
+  private initForm(): void {
     let productTitle!: string;
     let productSubTitle!: string;
     let productImage!: string;

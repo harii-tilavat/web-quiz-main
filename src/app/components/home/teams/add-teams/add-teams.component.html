@@ -1,0 +1,47 @@
+<div class="modal fade" id="add-teams" tabindex="-1" aria-labelledby="add-teams-label" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="add-teams-label">Manage Teams and Shapes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onClose()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="teamsForm">
+          <div class="mb-3">
+            <label for="title" class="col-form-label">Enter Title:</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+            <div class="error-message" *ngIf="teamsForm.controls['title'].touched || submitted">
+              <span class="error" *ngIf="teamsForm.controls['title'].errors?.['required']">
+                Title Required!
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="product-image" class="col-form-label">Enter Image:</label>
+            <input type="text" class="form-control" id="product-image" formControlName="image">
+            <div class="error-message" *ngIf="teamsForm.controls['image'].touched || submitted">
+              <span class="error" *ngIf="teamsForm.controls['image'].errors?.['required']">
+                Image required
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="col-form-label">Enter Description:</label>
+            <textarea class="form-control" id="description" formControlName="desc"></textarea>
+            <div class="error-message" *ngIf="teamsForm.controls['desc'].touched || submitted">
+              <span class="error" *ngIf="teamsForm.controls['desc'].errors?.['required']">
+                Description Required
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="app-button">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Close</button>
+          <button type="button" class="btn btn-main ms-2" (click)="onSave()" [attr.data-bs-dismiss]="teamsForm.valid?'modal':'else'">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

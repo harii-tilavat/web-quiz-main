@@ -43,8 +43,10 @@
       list-style: none;
       color: #313131;
       font-size: 15px;
+      display: flex;
+      flex-flow: column;
+      gap: 20px;
       .main-menu-label{
-        margin-left: 1.5rem;
         font-weight: 500;
       }
       .menu-item {
@@ -54,23 +56,18 @@
         }
       }
       .menu-link  {
-        margin-bottom: 20px;
         transition: 0.2s;
         position: relative;
         cursor: pointer;
         display: flex;
         align-items: center;
+        gap: 20px;
         &:hover{
           color: $primary;
           transform: translateX(5px);
         }
-        .ceret-icon {
-          position: absolute;
-          right: 0;
-        }
       }
       .menu-link.active{
-        // color: #313131;
         color: $primary;
       }
     }
