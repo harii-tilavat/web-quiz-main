@@ -21,8 +21,8 @@
     </div>
     <div class="menu-list">
       <ul class="main-menu list-unstyled">
-        <li *ngFor="let item of menuList;let i=index" class="menu-item">
-          <a class="menu-link" (click)="onRoute(item.label)" [routerLink]="item.routing" [routerLinkActive]="'active'">
+        <li *ngFor="let item of menuList;let i=index" class="menu-item" [routerLink]="item.routing" [routerLinkActive]="'active'">
+          <a class="menu-link" (click)="onRoute(item.label)" >
             <div>
               <span class="sidebar-icon"><fa-icon [icon]="item.icon"></fa-icon></span>
             </div>

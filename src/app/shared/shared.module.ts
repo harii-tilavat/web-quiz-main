@@ -9,13 +9,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddProductComponent } from '../components/home/product-list/add-product/add-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ConfirmBoxComponent } from './confirm-box/confirm-box.component';
 
 
 @NgModule({
   declarations: [
     SidebarComponent,
     BreadcrumbComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmBoxComponent
   ],
   imports: [
     CommonModule,

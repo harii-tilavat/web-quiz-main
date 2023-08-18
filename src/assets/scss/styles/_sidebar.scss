@@ -56,6 +56,14 @@
           list-style: disc;
           color: #898989;
         }
+        &.active{
+          background-color: $gray-100;
+          color: $gray-900;
+        }
+        &:hover{
+          background-color: $gray-100;
+          color: $gray-900;
+        }
       }
       .menu-link  {
         transition: 0.2s;
@@ -65,13 +73,13 @@
         align-items: center;
         gap: 20px;
         &:hover{
-          color: $primary;
+          // color: $primary;
           transform: translateX(5px);
         }
       }
-      .menu-link.active{
-        color: $primary;
-      }
+      // .menu-link.active{
+      //   color: $primary;
+      // }
     }
   }
 }
