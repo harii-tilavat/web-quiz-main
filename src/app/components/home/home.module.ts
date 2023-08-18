@@ -20,6 +20,8 @@ import { BenefitsComponent } from './benefits/benefits.component';
 import { AddBenefitComponent } from './benefits/add-benefit/add-benefit.component';
 import { MeetTheTeamComponent } from './meet-the-team/meet-the-team.component';
 import { AddTeamMemberComponent } from './meet-the-team/add-team-member/add-team-member.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { AddPricingComponent } from './pricing/add-pricing/add-pricing.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,7 @@ const routes: Routes = [
       { path: 'ux-research', component: ResearchComponent },
       { path: 'benefits', component: BenefitsComponent },
       { path: 'meet-the-team', component: MeetTheTeamComponent },
+      { path: 'pricing', component: PricingComponent },
       { path: '**', redirectTo:'dashboard', pathMatch:'full'}
     ]
   }
@@ -53,7 +56,9 @@ const routes: Routes = [
     BenefitsComponent,
     AddBenefitComponent,
     MeetTheTeamComponent,
-    AddTeamMemberComponent
+    AddTeamMemberComponent,
+    PricingComponent,
+    AddPricingComponent
   ],
   imports: [
     CommonModule,
