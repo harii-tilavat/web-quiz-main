@@ -1,0 +1,79 @@
+<app-breadcrumb [title]="'Benefits'"></app-breadcrumb>
+
+<div class="testimonial">
+  <div class="my-card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Benefits Details</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="add-user d-flex justify-content-end">
+        <div class="app-button">
+          <button type="button" class="btn-main" (click)="onAddItem()" data-bs-toggle="modal"
+            data-bs-target="#add-item">Add Item
+          </button>
+        </div>
+      </div>
+      <div class="load-table" *ngIf="itemList.length!==0 && !isLoading;">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of itemList;let i=index">
+                <td>{{item.id}}</td>
+                <td>{{item.title}} </td>
+                <td>
+                  <div class="avtar-image">
+                    <span class="icon">
+                      <img [src]="item.image" alt="img" class="img-fluid">
+                    </span>
+                  </div>
+                </td>
+                <td>{{item.desc}} </td>
+                <td>
+                  <div class="crud-btns">
+                    <span class="edit-btn" (click)="onEditItem(item.id)" data-bs-toggle="modal"
+                      data-bs-target="#add-item">
+                      <i>
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                      </i>
+                    </span>
+                    <span class="delete-btn ms-3" (click)="onDeleteItem(item.id)">
+                      <i>
+                        <fa-icon [icon]="faDelete"></fa-icon>
+                      </i>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <ng-container *ngIf="!isLoading && itemList.length===0">
+        <div class="empty-data d-flex-center">
+          <span>No records found!</span>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="isLoading && !errorMessage">
+        <div class="user-loader d-flex-center">
+          <div class="spinner-border text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<ng-container>
+  <app-add-benefit></app-add-benefit>
+</ng-container>

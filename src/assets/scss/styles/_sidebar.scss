@@ -45,11 +45,13 @@
       font-size: 15px;
       display: flex;
       flex-flow: column;
-      gap: 20px;
+      padding-top: 20px;
       .main-menu-label{
         font-weight: 500;
       }
       .menu-item {
+        padding: 10px 20px;
+        border-bottom:1px solid rgba(0, 0, 0, 0.1);
         ul {
           list-style: disc;
           color: #898989;

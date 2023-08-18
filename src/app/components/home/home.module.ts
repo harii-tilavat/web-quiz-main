@@ -16,6 +16,8 @@ import { TestimonyComponent } from './testimony/testimony.component';
 import { AddTestimonyComponent } from './testimony/add-testimony/add-testimony.component';
 import { ResearchComponent } from './research/research.component';
 import { AddResearchComponent } from './research/add-research/add-research.component';
+import { BenefitsComponent } from './benefits/benefits.component';
+import { AddBenefitComponent } from './benefits/add-benefit/add-benefit.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,7 @@ const routes: Routes = [
       { path: 'teams-of-shapes', component: TeamsComponent },
       { path: 'testimonial', component: TestimonyComponent },
       { path: 'ux-research', component: ResearchComponent },
+      { path: 'benefits', component: BenefitsComponent },
       { path: '**', redirectTo:'dashboard', pathMatch:'full'}
     ]
   }
@@ -43,7 +46,9 @@ const routes: Routes = [
     TestimonyComponent,
     AddTestimonyComponent,
     ResearchComponent,
-    AddResearchComponent
+    AddResearchComponent,
+    BenefitsComponent,
+    AddBenefitComponent
   ],
   imports: [
     CommonModule,

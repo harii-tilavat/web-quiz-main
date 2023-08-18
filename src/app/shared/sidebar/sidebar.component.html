@@ -19,7 +19,7 @@
         <span class="profile-des">{{'General Manager' | uppercase}} </span>
       </div>
     </div>
-    <div class="menu-list p-4 ">
+    <div class="menu-list">
       <ul class="main-menu list-unstyled">
         <li *ngFor="let item of menuList;let i=index" class="menu-item">
           <a class="menu-link" (click)="onRoute(item.label)" [routerLink]="item.routing" [routerLinkActive]="'active'">

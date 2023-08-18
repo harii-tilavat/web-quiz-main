@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SidebarMenuList } from 'src/app/_model';
-import { faHome, faImage, faRightFromBracket, faUsers, faNoteSticky, faRefresh} from 'node_modules/@fortawesome/free-solid-svg-icons';
+import { faHome, faImage, faRightFromBracket, faUsers, faNoteSticky, faRefresh, faThumbsUp } from 'node_modules/@fortawesome/free-solid-svg-icons';
 @Injectable({ providedIn: 'root' })
 export class SidebarService {
   public menuList: SidebarMenuList[] = [
@@ -36,6 +36,12 @@ export class SidebarService {
     },
     {
       id: 5,
+      icon: faThumbsUp,
+      label: 'Benefits',
+      routing: ['benefits'],
+    },
+    {
+      id: 6,
       icon: faRightFromBracket,
       label: 'Logout',
       routing: null,

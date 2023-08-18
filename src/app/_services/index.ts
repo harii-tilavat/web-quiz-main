@@ -5,3 +5,4 @@ export * from './auth/auth.guard';
 export * from './teams/teams.service';
 export * from './testimony/testimony.service';
 export * from './research/research.service';
+export * from './benefits/benefits.service';
