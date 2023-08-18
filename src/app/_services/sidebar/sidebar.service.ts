@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SidebarMenuList } from 'src/app/_model';
-import { faHome, faImage, faRightFromBracket, faUsers, faNoteSticky, faRefresh, faThumbsUp } from 'node_modules/@fortawesome/free-solid-svg-icons';
+import { faHome, faImage, faRightFromBracket, faUsers, faNoteSticky, faRefresh, faThumbsUp, faUser } from 'node_modules/@fortawesome/free-solid-svg-icons';
 @Injectable({ providedIn: 'root' })
 export class SidebarService {
   public menuList: SidebarMenuList[] = [
@@ -18,7 +18,7 @@ export class SidebarService {
     },
     {
       id: 3,
-      icon: faUsers,
+      icon: faUser,
       label: 'Teams of Shapes',
       routing: ['teams-of-shapes'],
     },
@@ -42,6 +42,12 @@ export class SidebarService {
     },
     {
       id: 6,
+      icon: faUsers,
+      label: 'Meet the Team',
+      routing: ['meet-the-team'],
+    },
+    {
+      id: 7,
       icon: faRightFromBracket,
       label: 'Logout',
       routing: null,

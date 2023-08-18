@@ -30,7 +30,8 @@ import { ConfirmBoxComponent } from './confirm-box/confirm-box.component';
   exports: [
     SidebarComponent,
     BreadcrumbComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmBoxComponent
   ]
 })
 export class SharedModule { }

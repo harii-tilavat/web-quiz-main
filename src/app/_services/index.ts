@@ -6,3 +6,4 @@ export * from './teams/teams.service';
 export * from './testimony/testimony.service';
 export * from './research/research.service';
 export * from './benefits/benefits.service';
+export * from './meet-the-team/meet-the-team.service';

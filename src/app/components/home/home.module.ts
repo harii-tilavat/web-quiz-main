@@ -18,6 +18,8 @@ import { ResearchComponent } from './research/research.component';
 import { AddResearchComponent } from './research/add-research/add-research.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { AddBenefitComponent } from './benefits/add-benefit/add-benefit.component';
+import { MeetTheTeamComponent } from './meet-the-team/meet-the-team.component';
+import { AddTeamMemberComponent } from './meet-the-team/add-team-member/add-team-member.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,7 @@ const routes: Routes = [
       { path: 'testimonial', component: TestimonyComponent },
       { path: 'ux-research', component: ResearchComponent },
       { path: 'benefits', component: BenefitsComponent },
+      { path: 'meet-the-team', component: MeetTheTeamComponent },
       { path: '**', redirectTo:'dashboard', pathMatch:'full'}
     ]
   }
@@ -48,7 +51,9 @@ const routes: Routes = [
     ResearchComponent,
     AddResearchComponent,
     BenefitsComponent,
-    AddBenefitComponent
+    AddBenefitComponent,
+    MeetTheTeamComponent,
+    AddTeamMemberComponent
   ],
   imports: [
     CommonModule,

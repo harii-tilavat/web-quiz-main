@@ -21,7 +21,7 @@
     </div>
     <div class="menu-list">
       <ul class="main-menu list-unstyled">
-        <li *ngFor="let item of menuList;let i=index" class="menu-item" [routerLink]="item.routing" [routerLinkActive]="'active'">
+        <li *ngFor="let item of menuList;let i=index" class="menu-item" [routerLink]="item.routing" [routerLinkActive]="'active'" [attr.data-bs-toggle]="item.label==='Logout'?'modal':null" [attr.data-bs-target]="item.label==='Logout'?'#confirm-box':null">
           <a class="menu-link" (click)="onRoute(item.label)" >
             <div>
               <span class="sidebar-icon"><fa-icon [icon]="item.icon"></fa-icon></span>

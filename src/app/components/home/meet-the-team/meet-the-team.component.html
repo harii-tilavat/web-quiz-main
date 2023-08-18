@@ -1,17 +1,17 @@
-<app-breadcrumb [title]="'Benefits'"></app-breadcrumb>
+<app-breadcrumb [title]="'Meet The Team'"></app-breadcrumb>
 
 <div class="testimonial">
   <div class="my-card">
     <div class="card-header">
       <div class="card-title">
-        <span>Benefits Details</span>
+        <span>Teams Member Details</span>
       </div>
     </div>
     <div class="card-body">
       <div class="add-user d-flex justify-content-end">
         <div class="app-button">
           <button type="button" class="btn-main" (click)="onAddItem()" data-bs-toggle="modal"
-            data-bs-target="#add-item">Add Item
+            data-bs-target="#add-item">Add Team Member
           </button>
         </div>
       </div>
@@ -31,7 +31,7 @@
               <tr *ngFor="let item of itemList;let i=index">
                 <td>{{item.id}}</td>
                 <td>{{item.title}} </td>
-                <td>{{item.title}} </td>
+                <td>{{item.subTitle}} </td>
                 <td>
                   <div class="avtar-image">
                     <span class="icon">
@@ -76,5 +76,5 @@
   </div>
 </div>
 <ng-container>
-  <app-add-benefit></app-add-benefit>
+  <app-add-team-member></app-add-team-member>
 </ng-container>
