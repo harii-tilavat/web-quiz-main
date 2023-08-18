@@ -14,6 +14,8 @@ import { AddTeamsComponent } from './teams/add-teams/add-teams.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestimonyComponent } from './testimony/testimony.component';
 import { AddTestimonyComponent } from './testimony/add-testimony/add-testimony.component';
+import { ResearchComponent } from './research/research.component';
+import { AddResearchComponent } from './research/add-research/add-research.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,7 @@ const routes: Routes = [
       { path: 'product-list', component: ProductListComponent },
       { path: 'teams-of-shapes', component: TeamsComponent },
       { path: 'testimonial', component: TestimonyComponent },
+      { path: 'ux-research', component: ResearchComponent },
       { path: '**', redirectTo:'dashboard', pathMatch:'full'}
     ]
   }
@@ -38,7 +41,9 @@ const routes: Routes = [
     TeamsComponent,
     AddTeamsComponent,
     TestimonyComponent,
-    AddTestimonyComponent
+    AddTestimonyComponent,
+    ResearchComponent,
+    AddResearchComponent
   ],
   imports: [
     CommonModule,
