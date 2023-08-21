@@ -52,8 +52,8 @@
         }
       }
       .profile-img {
-        height: $icon-size;
-        width: $icon-size;
+        width: $icon;
+        height: $icon;
         img {
           border-radius: 50%;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -62,13 +62,15 @@
     }
   }
   .bar-btn {
-    @extend %icons;
+    width: $icon;
+    height: $icon;
     span{
       cursor: pointer;
     }
   }
   .pull-me {
-    @extend %icons;
+    width: $icon;
+    height: $icon;
     margin-right: 10px;
   }
   // width: calc(100% - 250px);

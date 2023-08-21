@@ -10,6 +10,7 @@ import { AddProductComponent } from '../components/home/product-list/add-product
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ConfirmBoxComponent } from './confirm-box/confirm-box.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ConfirmBoxComponent } from './confirm-box/confirm-box.component';
     SidebarComponent,
     BreadcrumbComponent,
     FooterComponent,
-    ConfirmBoxComponent
+    ConfirmBoxComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { ConfirmBoxComponent } from './confirm-box/confirm-box.component';
     SidebarComponent,
     BreadcrumbComponent,
     FooterComponent,
-    ConfirmBoxComponent
+    ConfirmBoxComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }

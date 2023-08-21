@@ -6,6 +6,9 @@
    <div class="container-fluid">
     <div class="row">
       <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 p-0">
+        <section class="header border-bottom" id="header">
+          <app-navbar (sidebarToggle)="onSidebarToggle($event)"></app-navbar>
+        </section>
         <section class="page-body" id="page-body" >
           <router-outlet></router-outlet>
         </section>

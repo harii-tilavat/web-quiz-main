@@ -4,6 +4,7 @@
   padding: 20px;
   min-height: calc(100vh - $max-header-height);
   position: relative;
+  margin-top: $max-header-height;
   .page-header {
     padding: 20px 0;
     .breadcrumb{
@@ -22,4 +23,11 @@
   font-size: 0.9rem;
   color: #777777;
   font-weight: 500;
+}
+@media screen and (max-width:991px) {
+  .page-body {
+    min-height: calc(100vh - $min-header-height);
+    position: relative;
+    margin-top: $min-header-height;
+  }
 }
