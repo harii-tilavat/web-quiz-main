@@ -38,6 +38,7 @@ export class AddProductComponent implements OnInit {
     if (this.productForm.valid) {
       if (this.editMode) {
         this.productListService.updateProduct(this.editedProductId, this.productForm.value);
+        this.snakeBar.open('Product Updated Successfuly! ', 'Ok', { duration: 3000 });
       } else {
         this.productListService.addProduct(this.productForm.value);
         this.snakeBar.open('Product Added Successfuly! ', 'Ok', { duration: 3000 });

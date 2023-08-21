@@ -1,8 +1,8 @@
 <div class="sidebar-section">
-  <div class="logo-section d-flex-center d-lg-flex border-bottom border-end fixed-top">
+  <div class="logo-section d-flex-center d-lg-flex d-none border-bottom border-end fixed-top">
     <div class="logo d-flex-center">
       <i class="fa-solid fa-font-awesome"></i>
-      <span>Nugget</span>
+      <span>Web Quiz</span>
     </div>
   </div>
   <div class="sidebar-body">
@@ -19,12 +19,16 @@
         <span class="profile-des">{{'General Manager' | uppercase}} </span>
       </div>
     </div>
-    <div class="menu-list p-4 ">
+    <div class="menu-list">
       <ul class="main-menu list-unstyled">
-        <li *ngFor="let item of menuList;let i=index" class="menu-item">
-          <a class="menu-link" (click)="onRoute(item.label)" [routerLink]="item.routing" [routerLinkActive]="'active'">
-            <span class="sidebar-icon"><fa-icon [icon]="item.icon"></fa-icon></span>
-            <span class="main-menu-label " [ngClass]="{'fw-bold':item.label==='Logout'}">{{item.label}}</span>
+        <li *ngFor="let item of menuList;let i=index" class="menu-item" [routerLink]="item.routing" [routerLinkActive]="'active'" >
+          <a class="menu-link" (click)="onRoute(item.label)" >
+            <div>
+              <span class="sidebar-icon"><fa-icon [icon]="item.icon"></fa-icon></span>
+            </div>
+            <div>
+              <span class="main-menu-label " [ngClass]="{'fw-bold':item.label==='Logout'}">{{item.label}}</span>
+            </div>
           </a>
         </li>
       </ul>

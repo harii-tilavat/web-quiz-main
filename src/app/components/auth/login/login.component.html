@@ -1,4 +1,4 @@
-<div class="auth-section" >
+<!-- <div class="auth-section" >
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xxl-6 col-xl-8 col-lg-8 col-md-12 col-sm-12">
@@ -49,4 +49,81 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<div class="auth-section" >
+  <div class="auth-login d-flex-center">
+    <div class="login-section ">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-12">
+            <div class="login-form p-sm-5 p-4">
+              <form action="" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+                <div class="form-head text-center py-2">
+                  <p class="h6"><i class="fa-solid fa-3x fa-right-to-bracket"></i></p>
+                  <p class="h1">{{loginMode?'Login Here':'Sign up Here'}}</p>
+                  <p>Securely {{loginMode?'Login':'Sign up'}} to your account and explore a personalized experience
+                    tailored just for you.!</p>
+                </div>
+                <div class="form-body">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Enter Email</label>
+                    <input type="text" class="form-control" id="email" formControlName="email">
+                    <div class="error-message" *ngIf="authForm.controls['email'].touched || submitted ">
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['required']">Email
+                        Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['email'].errors?.['email']">Invalid
+                        Email!</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="current-password" class="form-label">Enter Password</label>
+                    <input type="password" class="form-control" id="current-password" formControlName="password">
+                    <div class="error-message" *ngIf="authForm.controls['password'].touched || submitted">
+                      <span class="error text-danger"
+                        *ngIf="authForm.controls['password'].errors?.['required']">Password Required!</span>
+                      <span class="error text-danger" *ngIf="authForm.controls['password'].errors?.['minlength']">Weak
+                        Password!</span>
+                    </div>
+                  </div>
+                  <div class="form-group d-flex-between mt-4">
+                    <div class="check-btn">
+                      <input type="checkbox" class="form-check-input">
+                      <label for="remember" class="form-check-label remember ms-2"> Remember me</label>
+                    </div>
+                    <div class="forgot-pass" *ngIf="false">
+                      <a class="">Forgot Password</a>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="submit">
+                      <button type="submit" class="btn submit-btn w-100" type="submit">
+                        <span *ngIf="isLoading"> <i class="fa fa-rotate rotate-round"></i></span>
+                        <!-- <span class="ms-2">{{loginMode?'Login':'Sign up'}}</span> -->
+                        <span>Login here</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-group text-center">
+                    <p (click)="onChangeMode()">
+                      {{loginMode?"Don't have":"Have"}} an account ? <a class="auth-mode">
+                        {{loginMode?"Signup":"Login"}}</a>
+                    </p>
+                  </div>
+                  <div class="alert-group">
+                    <div class="alert-toast w-100 " *ngIf="false">
+                      <div class="alert alert-danger">
+                        {{'error'}}!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container>
+    <!-- Flexbox container for aligning the toasts -->
+  </ng-container>

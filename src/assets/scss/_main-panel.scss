@@ -1,36 +1,6 @@
-a {
-  color: inherit;
-  text-decoration: none;
-}
-.icon {
-  height: $icon;
-  width:$icon;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-.main-section {
-  display: flex;
-  flex-flow: row;
-  .main-panel {
-    width: 100%;
-    margin-left: 0;
-    transition: 0.2s;
-  }
-}
-
-.d-flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.d-flex-between {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+@import "./styles/variable";
 @import './styles/sidebar';
+@import './styles/header';
 @import './styles/page-body';
 @import './styles/users';
 @import './styles/table';

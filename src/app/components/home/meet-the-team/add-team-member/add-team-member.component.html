@@ -1,0 +1,58 @@
+<div class="modal fade" id="add-item" tabindex="-1" aria-labelledby="add-item-label" aria-hidden="true"
+  data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="add-item-label">Manage team memeber Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onClose()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="title" class="col-form-label">Enter Title:</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+            <div class="error-message" *ngIf="form.controls['title'].touched || submitted">
+              <span class="error" *ngIf="form.controls['title'].errors?.['required']">
+                Title Required!
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="sub-title" class="col-form-label">Enter Sub title:</label>
+            <input type="text" class="form-control" id="sub-title" formControlName="subTitle">
+            <div class="error-message" *ngIf="form.controls['subTitle'].touched || submitted">
+              <span class="error" *ngIf="form.controls['subTitle'].errors?.['required']">
+                Sub Title Required!
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="product-image" class="col-form-label">Enter Image:</label>
+            <input type="text" class="form-control" id="product-image" formControlName="image">
+            <div class="error-message" *ngIf="form.controls['image'].touched || submitted">
+              <span class="error" *ngIf="form.controls['image'].errors?.['required']">
+                Image required
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="col-form-label">Enter Description:</label>
+            <textarea class="form-control" id="description" formControlName="desc"></textarea>
+            <div class="error-message" *ngIf="form.controls['desc'].touched || submitted">
+              <span class="error" *ngIf="form.controls['desc'].errors?.['required']">
+                Description Required
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="app-button">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Close</button>
+          <button type="button" class="btn btn-main ms-2" (click)="onSave()"
+            [attr.data-bs-dismiss]="form.valid?'modal':'else'">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,9 +11,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddProductComponent } from 'src/app/components/home/product-list/add-product/add-product.component';
 import { TeamsComponent } from './teams/teams.component';
 import { AddTeamsComponent } from './teams/add-teams/add-teams.component';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddTestimonyComponent } from './add-testimony/add-testimony.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TestimonyComponent } from './testimony/testimony.component';
+import { AddTestimonyComponent } from './testimony/add-testimony/add-testimony.component';
+import { ResearchComponent } from './research/research.component';
+import { AddResearchComponent } from './research/add-research/add-research.component';
+import { BenefitsComponent } from './benefits/benefits.component';
+import { AddBenefitComponent } from './benefits/add-benefit/add-benefit.component';
+import { MeetTheTeamComponent } from './meet-the-team/meet-the-team.component';
+import { AddTeamMemberComponent } from './meet-the-team/add-team-member/add-team-member.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { AddPricingComponent } from './pricing/add-pricing/add-pricing.component';
 
 const routes: Routes = [
   {
@@ -22,7 +30,12 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product-list', component: ProductListComponent },
-      { path: 'teams-and-shapes', component: TeamsComponent },
+      { path: 'teams-of-shapes', component: TeamsComponent },
+      { path: 'testimonial', component: TestimonyComponent },
+      { path: 'ux-research', component: ResearchComponent },
+      { path: 'benefits', component: BenefitsComponent },
+      { path: 'meet-the-team', component: MeetTheTeamComponent },
+      { path: 'pricing', component: PricingComponent },
       { path: '**', redirectTo:'dashboard', pathMatch:'full'}
     ]
   }
@@ -36,8 +49,16 @@ const routes: Routes = [
     AddProductComponent,
     TeamsComponent,
     AddTeamsComponent,
+    TestimonyComponent,
     AddTestimonyComponent,
-    TestimonyComponent
+    ResearchComponent,
+    AddResearchComponent,
+    BenefitsComponent,
+    AddBenefitComponent,
+    MeetTheTeamComponent,
+    AddTeamMemberComponent,
+    PricingComponent,
+    AddPricingComponent
   ],
   imports: [
     CommonModule,

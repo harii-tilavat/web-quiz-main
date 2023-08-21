@@ -1,4 +1,35 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.icon {
+  height: $icon;
+  width:$icon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.main-section {
+  display: flex;
+  flex-flow: row;
+  .main-panel {
+    width: 100%;
+    margin-left: 0;
+    transition: 0.2s;
+  }
+}
 
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-flex-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 // --------------Card--------------------//
 .my-card {
   box-shadow: 0 5px 24px 0 rgba(68, 102, 242, 0.05);
@@ -32,6 +63,7 @@
   vertical-align: middle;
   border: none;
   border-radius: 5px;
+  text-transform: uppercase;
   &:hover {
     background-color: $primary;
     color: white;
@@ -137,6 +169,7 @@
   }
 
   .logo-section {
+    height: $min-header-height;
     .logo {
       font-weight: bold;
       font-size: 1.5rem;
@@ -149,6 +182,9 @@
   }
 }
 @media only screen and (max-width: 576px) {
+  .sidebar-body{
+    margin-top: $min-header-height;
+  }
   .logo-section {
     .logo {
       font-weight: bold;

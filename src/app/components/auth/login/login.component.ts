@@ -12,12 +12,14 @@ import { AuthService } from 'src/app/_services/auth/auth.service';
 export class LoginComponent implements OnInit {
   public authForm!: FormGroup;
   public submitted: boolean = false;
+  public loginMode!:boolean;
+  public isLoading!:boolean;
   isAdmin: boolean = false;
   constructor(private authService: AuthService, private snakeBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.authForm = new FormGroup({
-      username: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required]),
     });
   }
@@ -34,6 +36,9 @@ export class LoginComponent implements OnInit {
       }
     }
     return;
+  }
+  onChangeMode(): void {
+    this.loginMode = !this.loginMode;
   }
   resetForm(): void {
     this.authForm.reset();
